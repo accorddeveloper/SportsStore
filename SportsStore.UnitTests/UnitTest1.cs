@@ -103,13 +103,13 @@ namespace SportsStore.UnitTests
             // Arrange - create the mock repo
             Mock<IProductRepository> mock = new Mock<IProductRepository>();
             mock.Setup(m => m.Products).Returns(new Product[]
-                                                {
-                                                    new Product {ProductID = 1, Name = "P1", Category = "Cat1"},
-                                                    new Product {ProductID = 2, Name = "P2", Category = "Cat2"},
-                                                    new Product {ProductID = 3, Name = "P3", Category = "Cat1"},
-                                                    new Product {ProductID = 4, Name = "P4", Category = "Cat2"},
-                                                    new Product {ProductID = 5, Name = "P5", Category = "Cat3"},
-                                                });
+                                {
+                                    new Product {ProductID = 1, Name = "P1", Category = "Cat1"},
+                                    new Product {ProductID = 2, Name = "P2", Category = "Cat2"},
+                                    new Product {ProductID = 3, Name = "P3", Category = "Cat1"},
+                                    new Product {ProductID = 4, Name = "P4", Category = "Cat2"},
+                                    new Product {ProductID = 5, Name = "P5", Category = "Cat3"},
+                                });
 
             // Arrange - create a controller and make the page size 3 items
             ProductController controller = new ProductController(mock.Object);

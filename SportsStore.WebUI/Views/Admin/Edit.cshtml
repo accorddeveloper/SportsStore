@@ -3,6 +3,10 @@
 @{
     ViewBag.Title = "Admin: Edit " + @Model.Name;
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+    // Disable client-side validation:
+//    HtmlHelper.ClientValidationEnabled = false;
+//    HtmlHelper.UnobtrusiveJavaScriptEnabled = false;
 }
 
 <h1>Edit @Model.Name</h1>
@@ -27,6 +31,7 @@
                         @Html.TextBox(property.PropertyName, null,
                                       new { @class = "form-control" })
                     }
+                    @Html.ValidationMessage(property.PropertyName)
                 </div>
             }
         }
